@@ -8,18 +8,21 @@ public class AircraftCarrier {
     private ArrayList<Marine> marines;
     private Position location;
     private ArrayList<Aircraft> aircrafts;
-    private Marine captain;
     // Score, Shared value with all objects of the class; can be modified with the set method.
     private static int score;
     // CrewRequired,Shared value with all objects of the class; can´t be modified
     private static int crewRequired;
 
 
-    public AircraftCarrier(int numberID, int capacity) {
+
+    public AircraftCarrier(int numberID, int capacity, int latitude, int longitude) {
         this.numberID = numberID;
         this.capacity = capacity;
         this.aircrafts = new ArrayList<Aircraft>();
-
+        this.location = new Position();
+        location.setLatitude(latitude);
+        location.setLongitude(longitude);
+        this.marines = new ArrayList<Marine>();
     }
 
     /**
@@ -27,17 +30,8 @@ public class AircraftCarrier {
      * Adds an Aircraft to an specific AircraftCarrier
      */
 
-    public boolean addAircraftToCarrier (Aircraft aircraft) {
-        boolean result = true;
-        for (Aircraft a : aircrafts) {
-            if (a.getLicencePlate()== aircraft.getLicencePlate()) {
-                result = false;
-            }
-        }
-        if (result) {
-            aircrafts.add(aircraft);
-        }
-        return result;
+    public void addAircraftToCarrier (Aircraft aircraft) {
+        aircrafts.add(aircraft);
     }
 
     /**
@@ -69,7 +63,19 @@ public class AircraftCarrier {
         return capacity;
     }
 
+    public Position getLocation() {
+        return location;
+    }
 
+    public void setLocation(Position location) {
+        this.location = location;
+    }
+
+    // +----------------+
+
+    public void addMarines(ArrayList<Marine> marine) {
+        this.marines= marine;
+    }
 
 
 

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * @author Camilo Muñoz
  */
@@ -15,12 +17,18 @@ public class Aircraft {
     // CrewRequired,Shared value with all objects of the class; can´t be modified
     private static int crewRequired;
 
-    public Aircraft(String licencePlate, AircraftCarrier carrier) {
+    public Aircraft(String licencePlate, AircraftCarrier carrier,int latitude, int longitude) {
         this.licencePlate=licencePlate;
         this.carrier = carrier;
+        this.inAir = false;
+        this.location = new Position();
+        location.setLatitude(latitude);
+        location.setLongitude(longitude);
+        this.copilot = new Marine(null,0);
+        this.pilot = new Marine(null,0);
+
+
     }
-
-
     public static int getScore() {
         return score;
     }
@@ -39,4 +47,34 @@ public class Aircraft {
     public String getLicencePlate() {
         return licencePlate;
     }
+
+    public Boolean getInAir() {
+        return inAir;
+    }
+
+    public void setInAir(Boolean inAir) {
+        this.inAir = inAir;
+    }
+
+    public AircraftCarrier getCarrier() {
+        return carrier;
+    }
+
+    public Position getLocation() {
+        return location;
+    }
+
+    public void setLocation(Position location) {
+        this.location = location;
+    }
+
+    // +----------------+
+
+    public void addPilot(Marine marine) {
+        this.pilot= marine;
+    }
+    public void addCoPilot(Marine marine) {
+        this.copilot= marine;
+    }
+
 }

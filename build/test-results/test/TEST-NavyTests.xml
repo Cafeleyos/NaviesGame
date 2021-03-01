@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NavyTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-02-22T01:28:22" hostname="DESKTOP-CAU9NES" time="0.056">
+<testsuite name="NavyTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-26T08:52:53" hostname="DESKTOP-CAU9NES" time="0.063">
   <properties/>
-  <testcase name="GIVEN a navy and Aircraft WHEN adding a new Aircraft with equal licence plate THEN shouldnÂ´t allow" classname="NavyTests" time="0.039"/>
-  <testcase name="GIVEN different navies WHEN calling alias names THEN return number of equal names" classname="NavyTests" time="0.004"/>
-  <testcase name="GIVEN a navy  WHEN adding an Airncrafrcarrier with equal id THEN shouldnÂ´t allow" classname="NavyTests" time="0.002"/>
-  <testcase name="GIVEN a navy with different Aircraftcarriers WHEN calling for the total capacity THEN return capacity of AircraftCarriers" classname="NavyTests" time="0.004"/>
+  <testcase name="GIVEN a navy with their machines WHEN there is equal or more staff required for them THEN confirm" classname="NavyTests" time="0.063"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
