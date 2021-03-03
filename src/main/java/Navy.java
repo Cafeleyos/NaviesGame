@@ -181,8 +181,6 @@ public class Navy {
         return false;
     }
 
-    //------------------//
-
     public void addMarine(Marine marine) {
         marines.add(marine);
     }
@@ -198,4 +196,25 @@ public class Navy {
         }
        return result;
     }
+
+    //------------------//
+
+    public ArrayList<Object> willBeDestroyed(int latitude,int longitude) {
+        ArrayList<Object> machines = new ArrayList<>();
+        ArrayList<Object> temporal;
+
+        for (int i = -1; i < 2; i++) {
+            for (int j = -1; j < 2; j++) {
+                temporal =(board.isThereAnyone(latitude+i,longitude+j));
+                if (!(temporal.size()== 0)){
+                    machines.addAll(temporal);
+                }
+            }
+        }
+        if (machines.size() == 0) {
+            return null;
+        }
+        return machines;
+    }
+
 }

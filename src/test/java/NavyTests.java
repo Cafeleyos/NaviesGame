@@ -477,4 +477,42 @@ public class NavyTests {
         Assertions.assertFalse(n1.enoughMarines(),"Not enough marines");
     }
 
+    @Test
+    @DisplayName("GIVEN a navies context WHEN an explosion occurs THEN which machines can be affected")
+    public void specificExplosionShouldReturnMachinesAffected() {
+        ArrayList<Navy> navies = new ArrayList<>();
+        Board board = new Board(navies);
+
+        Navy n1 = new Navy("ALLY", 1, board);
+        navies.add(n1);
+
+        AircraftCarrier c1 =new AircraftCarrier(1,30,0,0);
+        n1.addAircraftCarrier(c1);
+
+        Aircraft a1 = new Aircraft("FDB", c1,-1,-1);
+        Aircraft a2 = new Aircraft("STV", c1,1,1);
+
+        n1.addAircraft(a1);
+        n1.addAircraft(a2);
+
+        Navy n2 = new Navy("ENEMY", 2, board);
+        navies.add(n2);
+
+        AircraftCarrier c3 =new AircraftCarrier(2,20,20,20);
+        n2.addAircraftCarrier(c1);
+
+        Aircraft a5 = new Aircraft("STV", c3,100,-30);
+        Aircraft a6 = new Aircraft("SYW", c3,-20,-15);
+        n2.addAircraft(a5);
+        n2.addAircraft(a6);
+
+        ArrayList<Object> result = n1.willBeDestroyed(0,0);
+        Assertions.assertNotNull(result);
+        Assertions.assertEquals(4,result.size());
+
+        Assertions.assertNull(n1.willBeDestroyed(90,90));
+
+    }
 }
+
+

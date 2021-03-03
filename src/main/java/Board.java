@@ -134,4 +134,32 @@ public class Board {
 
     //++++++++++++++++++++++
 
+
+    public ArrayList<Object> isThereAnyone(int latitude, int longitude) {
+        ArrayList<Object> isThere = new ArrayList<>();
+        int result;
+        for (Navy n : navies) {
+                for (Aircraft a : n.getAircrafts()) {
+                    result = a.getLocation().getLatitude();
+                    result = a.getLocation().getLongitude();
+
+                    if (a.getLocation().getLatitude() == latitude && a.getLocation().getLongitude() == longitude) {
+                        isThere.add(a);
+                    }
+                }
+                for (AircraftCarrier a : n.getCarriers()) {
+                    if (a.getLocation().getLatitude() == latitude && a.getLocation().getLongitude() == longitude) {
+                        isThere.add(a);
+                    }
+                }
+                for (Ship a : n.getShips()) {
+                    if (a.getLocation().getLatitude() == latitude && a.getLocation().getLongitude() == longitude) {
+                        isThere.add(a);
+                    }
+                }
+            }
+
+        return isThere;
+    }
+
 }

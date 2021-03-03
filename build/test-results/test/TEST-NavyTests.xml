@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NavyTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-26T08:52:53" hostname="DESKTOP-CAU9NES" time="0.063">
+<testsuite name="NavyTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-03T15:49:45" hostname="DESKTOP-CAU9NES" time="0.069">
   <properties/>
-  <testcase name="GIVEN a navy with their machines WHEN there is equal or more staff required for them THEN confirm" classname="NavyTests" time="0.063"/>
+  <testcase name="GIVEN a navies context WHEN an explosion occurs THEN which machines can be affected" classname="NavyTests" time="0.069"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
