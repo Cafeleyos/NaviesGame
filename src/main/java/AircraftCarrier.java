@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 /**
+ * Class that represent an AircraftCarrier.
  * @author Camilo Muñoz
  */
 public class AircraftCarrier {
@@ -70,6 +71,11 @@ public class AircraftCarrier {
     public void setLocation(Position location) {
         this.location = location;
     }
+
+    /**
+     * Add an amount of marines that will control the AircraftCarrier.
+     * @param marine
+     */
 
     public void addMarines(ArrayList<Marine> marine) {
         this.marines= marine;

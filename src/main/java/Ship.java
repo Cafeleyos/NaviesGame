@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 /**
+ * Class that represent a generic ship
  * @author Camilo Muñoz
  */
 

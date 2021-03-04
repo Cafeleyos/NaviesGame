@@ -1,4 +1,5 @@
 /**
+ * Class that represent an aircraft. It must belong to an AircraftCarrier to exist
  * @author Camilo Muñoz
  */
 public class Aircraft {
@@ -30,10 +31,7 @@ public class Aircraft {
     public static int getScore() {
         return score;
     }
-    /**
-     * @param newScore
-     * Changes the actual score
-     */
+
     public static void setScore(int newScore) {
         score= newScore;
     }
@@ -66,11 +64,17 @@ public class Aircraft {
         this.location = location;
     }
 
-    // +----------------+
-
+    /**
+     * Adds a marine to the aircraft
+     * @param marine that will be the pilot
+     */
     public void addPilot(Marine marine) {
         this.pilot= marine;
     }
+    /**
+     * Adds a marine to the aircraft
+     * @param marine that will be the copilot
+     */
     public void addCoPilot(Marine marine) {
         this.copilot= marine;
     }

@@ -1,4 +1,5 @@
 /**
+ * Class that give the machines a perception of position through the board.
  * @author Camilo Muñoz
  */
 public class Position {

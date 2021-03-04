@@ -1,4 +1,5 @@
 /**
+ * Class that represents the board of the game with its limits and navies.
  * @author Camilo Muñoz
  */
 import java.util.ArrayList;

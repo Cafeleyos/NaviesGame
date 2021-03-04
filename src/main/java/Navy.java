@@ -63,7 +63,10 @@ public class Navy {
     }
 
     /**
-     * Adds an Aircraft to the Navy
+     * Adds an Aircraft to the Navy and to the respective AircraftCarrier if the carrier has availability.
+     *
+     * @return if it was added or not
+     *
      */
     public boolean addAircraft(Aircraft aircraft) {
         boolean result = true;
@@ -84,7 +87,12 @@ public class Navy {
 
 
     }
-
+    /**
+     * Adds a new ship to the navy
+     *
+     * @param ship to be added
+     * @return if it was added or not taking into account its ID
+     */
     public boolean addShip(Ship ship) {
         boolean result = true;
         for (Ship s : ships) {
@@ -103,15 +111,26 @@ public class Navy {
         return this.name;
     }
 
-
+    /**
+     * Calls for the enemy aircrafts that are flying
+     *
+     * @return the list of enemies in Air
+     */
     public ArrayList<String> EnemiesInAir() {
         return board.getEnemiesInAir(this.IDENTIFICATION);
     }
+
 
     public List<Aircraft> getAircrafts() {
         return aircrafts;
     }
 
+    /**
+     * Defines if attacking in a certain position its a good idea taking into account the allies, enemies or just water that is there.
+     * @param latitude for the attack
+     * @param longitude for the attack
+     * @return ¿its a good attack?
+     */
     public boolean itsAGoodAttack(int latitude, int longitude) {
 
         if (board.isThereAnyAlly(this.IDENTIFICATION,latitude, longitude)) {
@@ -131,6 +150,12 @@ public class Navy {
         return ships;
     }
 
+    /**
+     * If its possible(without crashing with an enemy or setting out of bounds), it moves all the ships and AircraftCarriers the amount defined.
+     * @param deltaLatitude amount through latitude.
+     * @param deltaLongitude amount through longitude.
+     * @return if it was possible or not.
+     */
     public boolean moveOn(int deltaLatitude, int deltaLongitude) {
         boolean samePostion;
         for (Ship s: ships) {
@@ -162,10 +187,20 @@ public class Navy {
         return true;
     }
 
+    /**
+     * Gets the total amount of machines that a navy has.
+     *
+     * @return the number of machines.
+     */
     public int numberOfMachines () {
         return aircrafts.size() + carriers.size() +ships.size();
     }
 
+    /**
+     * Defines if an Enemy aircraft can be confused with an ally one comparing its licence plate.
+     *
+     * @return if there is a problem or not.
+     */
     public boolean problemInAir() {
         ArrayList<String> enemies;
         ArrayList<String> allies ;
@@ -185,6 +220,14 @@ public class Navy {
         marines.add(marine);
     }
 
+    /**
+     * Specifies if there are enough marines in the navy for the machines.
+     * Each machine has a number of marines required:
+     * Aircrafts: 2
+     * AircraftCarriers: 5
+     * Ships: 4
+     *
+     */
     public boolean enoughMarines() {
         boolean result = false;
         if ((this.marines.size()==0)) {
@@ -197,6 +240,17 @@ public class Navy {
        return result;
     }
 
+    /**
+     * Determines which machines will be destroyed in case a bomb is launched to an specific coordinate.
+     * @param latitude for the bomb
+     * @param longitude for the bomb
+     *
+     * In this case the bomb has a blast radius of 3*3.
+     *
+     * If none machines will be destroyed it will return null.
+     *
+     * @return the machines that will be destroyed
+     */
     public ArrayList<Object> willBeDestroyed(int latitude,int longitude) {
         ArrayList<Object> machines = new ArrayList<>();
         ArrayList<Object> temporal;
