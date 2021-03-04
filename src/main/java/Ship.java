@@ -48,7 +48,6 @@ public class Ship {
         return numberId;
     }
 
-    // +----------------+
     public void addMarines(ArrayList<Marine> marine) {
         this.marines= marine;
     }

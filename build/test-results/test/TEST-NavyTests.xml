@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NavyTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-03T15:49:45" hostname="DESKTOP-CAU9NES" time="0.069">
+<testsuite name="NavyTests" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-03-04T02:05:13" hostname="DESKTOP-CAU9NES" time="0.189">
   <properties/>
-  <testcase name="GIVEN a navies context WHEN an explosion occurs THEN which machines can be affected" classname="NavyTests" time="0.069"/>
+  <testcase name="GIVEN a navy and Aircraft WHEN adding a new Aircraft with equal licence plate THEN shouldnÂ´t allow" classname="NavyTests" time="0.11"/>
+  <testcase name="GIVEN navies with their machines WHEN calling an attack to a location THEN return if its good or not depending if there is an ally, enemy or nothing" classname="NavyTests" time="0.003"/>
+  <testcase name="GIVEN navies with ships THEN Move all ally ships out of bounds THEN ShouldnÂ´t allow" classname="NavyTests" time="0.001"/>
+  <testcase name="GIVEN a navies context WHEN an explosion occurs THEN which machines can be affected" classname="NavyTests" time="0.006"/>
+  <testcase name="GIVEN different navies WHEN calling alias names THEN return number of equal names" classname="NavyTests" time="0.002"/>
+  <testcase name="GIVEN a navy with their machines WHEN there is equal or more staff required for them THEN confirm" classname="NavyTests" time="0.001"/>
+  <testcase name="GIVEN a navy with different machines THEN ask for the count of all them THEN get the total number of machines" classname="NavyTests" time="0.003"/>
+  <testcase name="GIVEN navies with their respective aircrafts WHEN equal licencePlates arent in Air THEN return false" classname="NavyTests" time="0.001"/>
+  <testcase name="GIVEN a navy  WHEN adding a ship with equal id THEN shouldnÂ´t allow" classname="NavyTests" time="0.01"/>
+  <testcase name="GIVEN a navy  WHEN adding an Airncrafrcarrier with equal id THEN shouldnÂ´t allow" classname="NavyTests" time="0.003"/>
+  <testcase name="GIVEN 2 navies with their respective aircrafts WHEN calling for enemy aircrafts in air THEN licence plates of them" classname="NavyTests" time="0.007"/>
+  <testcase name="GIVEN navies with ships THEN Move all ally ships without interference and in bounds THEN Should allow" classname="NavyTests" time="0.001"/>
+  <testcase name="GIVEN a navy with different Aircraftcarriers WHEN calling for the total capacity THEN return capacity of AircraftCarriers" classname="NavyTests" time="0.001"/>
+  <testcase name="GIVEN navies with their respective aircrafts WHEN equal licencePlates are in Air THEN return true" classname="NavyTests" time="0.002"/>
+  <testcase name="GIVEN navies with ships THEN Move all ally ships crashing with an enemy one THEN ShouldnÂ´t allow" classname="NavyTests" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

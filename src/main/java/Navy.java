@@ -19,10 +19,10 @@ public class Navy {
         this.IDENTIFICATION = identification;
         this.name = name;
         this.board = board;
-        this.carriers = new ArrayList<AircraftCarrier>();
-        this.aircrafts = new ArrayList<Aircraft>();
-        this.ships = new ArrayList<Ship>();
-        this.marines = new ArrayList<Marine>();
+        this.carriers = new ArrayList<>();
+        this.aircrafts = new ArrayList<>();
+        this.ships = new ArrayList<>();
+        this.marines = new ArrayList<>();
     }
 
 
@@ -71,7 +71,7 @@ public class Navy {
 
 
             for (Aircraft a : aircrafts) {
-                if (a.getLicencePlate() == aircraft.getLicencePlate()) {
+                if (a.getLicencePlate().equals(aircraft.getLicencePlate())) {
                     result = false;
                 }
             }
@@ -132,7 +132,7 @@ public class Navy {
     }
 
     public boolean moveOn(int deltaLatitude, int deltaLongitude) {
-        boolean samePostion = false;
+        boolean samePostion;
         for (Ship s: ships) {
             if (!(s.getLocation().getLatitude()+deltaLatitude <= board.MAX_LATITUDE && s.getLocation().getLatitude()+deltaLatitude >= board.MIN_LATITUDE)) {
                 return false;
@@ -167,13 +167,13 @@ public class Navy {
     }
 
     public boolean problemInAir() {
-        ArrayList<String> enemies = new ArrayList<>();
-        ArrayList<String> allies = new ArrayList<>();
+        ArrayList<String> enemies;
+        ArrayList<String> allies ;
         enemies = board.getEnemiesInAir(this.IDENTIFICATION);
         allies = board.getAlliesInAir(this.IDENTIFICATION);
         for (String a: allies) {
             for(String e: enemies){
-                if (a ==e) {
+                if (a.equals(e)) {
                     return true;
                 }
         }
@@ -196,8 +196,6 @@ public class Navy {
         }
        return result;
     }
-
-    //------------------//
 
     public ArrayList<Object> willBeDestroyed(int latitude,int longitude) {
         ArrayList<Object> machines = new ArrayList<>();

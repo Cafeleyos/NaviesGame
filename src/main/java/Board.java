@@ -131,17 +131,10 @@ public class Board {
 
         return inAirAircrafts;
     }
-
-    //++++++++++++++++++++++
-
-
     public ArrayList<Object> isThereAnyone(int latitude, int longitude) {
         ArrayList<Object> isThere = new ArrayList<>();
-        int result;
         for (Navy n : navies) {
                 for (Aircraft a : n.getAircrafts()) {
-                    result = a.getLocation().getLatitude();
-                    result = a.getLocation().getLongitude();
 
                     if (a.getLocation().getLatitude() == latitude && a.getLocation().getLongitude() == longitude) {
                         isThere.add(a);

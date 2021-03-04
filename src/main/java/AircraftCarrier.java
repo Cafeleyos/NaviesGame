@@ -71,12 +71,7 @@ public class AircraftCarrier {
         this.location = location;
     }
 
-    // +----------------+
-
     public void addMarines(ArrayList<Marine> marine) {
         this.marines= marine;
     }
-
-
-
 }
